@@ -5,12 +5,15 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        hashmap = {}
+        
+        hashmap = {}  # словарь
         
         for i in range(len(nums)):
-            complement = target - nums[i]
+            complement = target - nums[i]  # число, которое нужно найти
             
+            # увидели нужное число — возвращаем ответ
             if complement in hashmap:
                 return [hashmap[complement], i]
             
+            # сохраняем текущее число в словарь
             hashmap[nums[i]] = i
